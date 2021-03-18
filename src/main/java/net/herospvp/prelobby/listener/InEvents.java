@@ -76,8 +76,8 @@ public class InEvents implements Listener {
         PPlayer pPlayer = pBank.get(player);
         if (pPlayer == null) {
             pPlayer = new PPlayer(
-                    player.getName(),
-                    player.getAddress().getAddress().getHostAddress(),
+                    name,
+                    ip,
                     false,
                     false
             );
@@ -113,11 +113,12 @@ public class InEvents implements Listener {
                 player.kickPlayer(kickMessage);
                 return;
             }
+            finalPPlayer.setBehaviourSafe(true);
             verificationComplete(player);
         }, 100L);
 
         TitleAPI.sendTitle(player, 10, 60, 10, "", ChatColor.RED + "Verifica della connessione...");
-        player.teleport(pPlayer.isBehaviourSafe() ? safeLocation : unsafeLocation);
+        player.teleport(finalPPlayer.isBehaviourSafe() ? safeLocation : unsafeLocation);
 
         event.setJoinMessage(null);
         player.setGameMode(GameMode.ADVENTURE);
