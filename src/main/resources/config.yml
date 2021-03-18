@@ -1,0 +1,11 @@
+antibot:
+  allowed-regions:
+    - IT
+    - DE
+    - FR
+    - CH
+    - RO
+    - LT
+  blacklisted-names:
+    - MCDrop
+    - MCSpam

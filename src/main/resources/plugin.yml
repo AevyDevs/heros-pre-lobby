@@ -1,0 +1,4 @@
+name: heros-pre-lobby
+version: 1.0.0-SNAPSHOT
+author: Sorridi
+main: net.herospvp.prelobby.PreLobby
